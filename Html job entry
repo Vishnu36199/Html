@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FOB Entry System</title>
+</head>
+<body>
+    <h1>Welcome to the FOB Entry System</h1>
+    
+    <form>
+        <label for="keycard">Enter your FOB keycard:</label>
+        <input type="text" id="keycard" name="keycard" required>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    
+    <div id="result">
+        <!-- Display access status here -->
+    </div>
+
+    <!-- JavaScript for handling form submission and access control -->
+    <script>
+        document.querySelector('form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const keycard = document.getElementById('keycard').value;
+            
+            // Add your logic to validate the keycard and grant access here
+            
+            // Example: Check if keycard is valid (for demonstration purposes)
+            if (keycard === "valid-keycard") {
+                document.getElementById('result').innerHTML = "Access granted!";
+            } else {
+                document.getElementById('result').innerHTML = "Access denied!";
+            }
+        });
+    </script>
+</body>
+</html>
